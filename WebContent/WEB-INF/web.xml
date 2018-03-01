@@ -22,4 +22,20 @@
       <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
     </jsp-property-group>
   </jsp-config>
+  
+  <!--  Our Spring MVC Dispatcher servlet which receives routes requests from browser - index -->
+  <servlet>
+    <description></description>
+    <display-name>offers</display-name>
+    <servlet-name>offers</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>offers</servlet-name>
+    <url-pattern>/spring</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
