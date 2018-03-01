@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+Hello dear <%= session.getAttribute("name")  %> , this is Spring!!
+<p>
+Request : <%= request.getAttribute("name") %>
+</p>
 
+<p>
+Request using Expression Language : ${name}
+</p>
 </body>
 </html>
