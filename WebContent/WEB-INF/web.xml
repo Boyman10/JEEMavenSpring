@@ -15,10 +15,10 @@
 		<servlet-name>Home</servlet-name>
 		<servlet-class>com.ocr.test.servlets.Home</servlet-class>
 	</servlet>
-	<servlet-mapping>
+	<!-- <servlet-mapping>
 		<servlet-name>Home</servlet-name>
 		<url-pattern>/</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>-->
 	<jsp-config>
 		<jsp-property-group>
 			<url-pattern>*.jsp</url-pattern>
@@ -36,10 +36,10 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+<!--  It will map the content of offers-servlet.xml file -->
 	<servlet-mapping>
 		<servlet-name>offers</servlet-name>
-		<url-pattern>/spring</url-pattern>
-		<url-pattern>/jstl</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 	<!-- https://tomcat.apache.org/tomcat-9.0-doc/jndi-datasource-examples-howto.html -->
@@ -60,6 +60,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 		classpath:com/ocr/test/config/dao-context.xml
+		classpath:com/ocr/test/config/service-context.xml
 		</param-value>
 	</context-param>
 </web-app>

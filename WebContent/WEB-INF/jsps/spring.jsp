@@ -15,5 +15,10 @@ Request : <%= request.getAttribute("name") %>
 <p>
 Request using Expression Language : ${name}
 </p>
+
+<h3>Inner Links</h3>
+<p><a href="${pageContext.request.contextPath}/jstl">Show current offers</a></p>
+<p><a href="${pageContext.request.contextPath}/createoffer">Create offer</a></p>
+
 </body>
 </html>
