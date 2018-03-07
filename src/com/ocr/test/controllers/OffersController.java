@@ -61,10 +61,10 @@ public class OffersController {
 		return "createoffer";
 	}
 	
-	@RequestMapping("/docreate")
-	public String doCreate() {
+	@RequestMapping(value="/docreate",method=RequestMethod.POST)
+	public String doCreate(Model model, Offer offer) {
 		
-		
+		System.out.println(offer);
 		return "docreate";
 	}
 	/**
