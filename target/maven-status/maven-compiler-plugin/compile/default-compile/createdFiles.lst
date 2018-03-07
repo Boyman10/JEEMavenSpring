@@ -1,0 +1,10 @@
+com\ocr\test\servlets\Home.class
+com\ocr\test\controllers\OffersController.class
+com\ocr\test\dao\OffersDAO$1.class
+com\ocr\test\dao\OffersDAO.class
+com\ocr\test\dao\OffersDAO$2.class
+com\ocr\test\dao\Offer.class
+com\ocr\test\service\OffersService.class
+com\ocr\test\servlets\Test.class
+com\ocr\test\controllers\AboutController.class
+com\ocr\test\beans\Author.class

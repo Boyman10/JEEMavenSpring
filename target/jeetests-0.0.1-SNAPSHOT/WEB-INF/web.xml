@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<servlet>
+		<servlet-name>Test</servlet-name>
+		<servlet-class>com.ocr.test.servlets.Test</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Test</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Home</servlet-name>
+		<servlet-class>com.ocr.test.servlets.Home</servlet-class>
+	</servlet>
+	<!-- <servlet-mapping>
+		<servlet-name>Home</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>-->
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
+
+	<!-- Our Spring MVC Dispatcher servlet which receives routes requests from 
+		browser - index -->
+	<servlet>
+		<description></description>
+		<display-name>offers</display-name>
+		<servlet-name>offers</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+<!--  It will map the content of offers-servlet.xml file -->
+	<servlet-mapping>
+		<servlet-name>offers</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- https://tomcat.apache.org/tomcat-9.0-doc/jndi-datasource-examples-howto.html -->
+	<resource-ref>
+		<description>DB Connection</description>
+		<res-ref-name>jdbc/TestJNDI</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+
+	<!--  the loader listener for additionnal configuration files -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+		classpath:com/ocr/test/config/dao-context.xml
+		classpath:com/ocr/test/config/service-context.xml
+		</param-value>
+	</context-param>
+</web-app>

@@ -11,6 +11,9 @@
 <body>
 	<h1>Creating Content</h1>
 
+<form method="GET" action="${}">
 
+
+</form>
 </body>
 </html>
