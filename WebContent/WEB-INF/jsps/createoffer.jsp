@@ -19,11 +19,15 @@
 
 <table>
 <tr>
-	<td>Login name</td><td><sf:input path="name" type="text" name="name" /></td></tr>
-	<tr><td>Login email</td><td><sf:input path="email" type="text" name="email" /></td></tr>
-	<tr><td>Text</td><td><sf:textarea path="text" name="text"></sf:textarea></td></tr>
+	<td>Login name</td><td><sf:input path="name" type="text" name="name" /><br/>
+	<sf:errors path="name" cssClass="error"></sf:errors>
+	</td></tr>
+	<tr><td>Login email</td><td><sf:input path="email" type="text" name="email" /><br/>
+	<sf:errors path="email" cssClass="error"></sf:errors></td></tr>
+	<tr><td>Text</td><td><sf:textarea path="text" name="text"></sf:textarea><br/>
+	<sf:errors path="text" cssClass="error"></sf:errors></td></tr>
 	<tr><td></td><td><input type="submit" value="login" /></td></tr>
-</tr>
+
 </table>
 </sf:form>
 

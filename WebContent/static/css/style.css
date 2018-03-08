@@ -5,3 +5,8 @@ table {
 	background-color : pink;
 	margin : 10px;
 	}
+
+	.error {
+		
+		color :red;
+	}
