@@ -2,6 +2,8 @@ package com.ocr.test.service;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,12 @@ public class OffersService {
 	@Autowired
 	public void setOffersDao(OffersDAO offersDao) {
 		this.offersDao = offersDao;
+	}
+
+	public void create(@Valid Offer offer) {
+
+		offersDao.create(offer);
+		
 	}
 
 

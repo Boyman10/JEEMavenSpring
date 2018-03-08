@@ -8,5 +8,7 @@
 </head>
 <body>
 <h2>Great JOB</h2>
+
+<p><a href="${pageContext.request.contextPath}/jstl">back to current offers</a></p>
 </body>
 </html>

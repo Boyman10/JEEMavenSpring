@@ -76,10 +76,10 @@ public class OffersController {
 			for(ObjectError error : errors) {
 				System.out.println(error.getDefaultMessage());
 			}
-			
-			return "createoffer";
-			
+						
 		}
+		
+		offersService.create(offer);
 
 
 		

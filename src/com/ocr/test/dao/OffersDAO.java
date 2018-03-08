@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Component("offersDAO")
 public class OffersDAO {
 
+	// Using named parameters is good :
 	private NamedParameterJdbcTemplate jdbc;
 	
 	public OffersDAO() {
@@ -98,4 +100,24 @@ public class OffersDAO {
 		
 		
 	}
+	
+	@Transactional
+	public int create(Offer offer) {
+		
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
+		
+		return jdbc.update("INSERT INTO offers (name,text, email) value (:name, :text, :email)", params);
+				
+	}
+	
+	
+	public boolean delete(int id) {
+		
+		MapSqlParameterSource params = new MapSqlParameterSource("id",id);
+		
+		//jdbc.getJdbcOperations();
+		return jdbc.update("DELETE FROM offers WHERE id=:id", params) == 1;
+	}
+	
+
 }
