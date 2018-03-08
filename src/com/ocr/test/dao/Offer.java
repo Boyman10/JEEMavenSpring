@@ -15,7 +15,7 @@ public class Offer {
 	private String name;
 	
 	@NotNull
-	@ValidEmail(min=6)
+	@ValidEmail(min=6, message="This email address is not proper")
 	private String email;
 	
 	@Size(min=10, max=300, message="Name must be 10 and 300 characters")

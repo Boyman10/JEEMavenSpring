@@ -3,6 +3,8 @@ package com.ocr.test.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+import org.apache.commons.validator.routines.EmailValidator;
+
 public class ValidEmailImpl implements ConstraintValidator<ValidEmail,String>{
 
 	private int min;
@@ -16,10 +18,14 @@ public class ValidEmailImpl implements ConstraintValidator<ValidEmail,String>{
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext context) {
 
-		if (value.length() >= min)
-			return true;
-					
-		return false;
+		if (value.length() < min )
+			return false;
+		
+		// Apache validator :
+		if(!EmailValidator.getInstance(false).isValid(value))
+			return false;
+		
+		return true;
 	}
 
 }
