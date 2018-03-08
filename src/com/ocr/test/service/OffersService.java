@@ -31,6 +31,12 @@ public class OffersService {
 		
 	}
 
+	public void throwTestException() {
+
+		// Testing fake ids :
+		offersDao.getOffer(9999);
+	}
+
 
 	
 }
