@@ -4,6 +4,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.ocr.test.validation.ValidEmail;
+
 public class Offer {
 
 	private int id;
@@ -13,7 +15,7 @@ public class Offer {
 	private String name;
 	
 	@NotNull
-	@Pattern(regexp=".*\\@.*\\..*", message="This does not appear to be a valid email address!")
+	@ValidEmail(min=6)
 	private String email;
 	
 	@Size(min=10, max=300, message="Name must be 10 and 300 characters")
