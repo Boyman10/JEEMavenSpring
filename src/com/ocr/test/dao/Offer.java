@@ -1,9 +1,23 @@
 package com.ocr.test.dao;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Offer {
 
 	private int id;
-	private String name, email, text;
+	
+	@NotNull
+	@Size(min=5, max=30, message="Name must be 5 and 30 characters")
+	private String name;
+	
+	@NotNull
+	@Pattern(regexp=".*\\@.*\\..*", message="This does not appear to be a valid email address!")
+	private String email;
+	
+	@Size(min=10, max=300, message="Name must be 10 and 300 characters")
+	private String text;
 	
 	public Offer()
 	{
